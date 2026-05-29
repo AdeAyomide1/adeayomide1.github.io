@@ -89,3 +89,17 @@ const secObserver = new IntersectionObserver(entries => {
   });
 }, { threshold: 0.5 });
 sections.forEach(s => secObserver.observe(s));
+// More Projects Toggle
+const moreProjectsBtn = document.getElementById('moreProjectsBtn');
+const moreProjects = document.getElementById('moreProjects');
+
+if (moreProjectsBtn && moreProjects) {
+  moreProjectsBtn.addEventListener('click', () => {
+    moreProjects.classList.toggle('show');
+
+    moreProjectsBtn.textContent =
+      moreProjects.classList.contains('show')
+        ? 'Hide Projects ↑'
+        : 'More Projects ↓';
+  });
+}
